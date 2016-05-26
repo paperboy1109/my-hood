@@ -58,8 +58,8 @@
 		4E0E8E8D1CF78B42006F76C7 /* my-hood */ = {
 			isa = PBXGroup;
 			children = (
-				4E0E8EA31CF79888006F76C7 /* View */,
 				4E0E8EA01CF78BA7006F76C7 /* Model */,
+				4E0E8EA31CF79888006F76C7 /* View */,
 				4E0E8E8E1CF78B42006F76C7 /* AppDelegate.swift */,
 				4E0E8E901CF78B42006F76C7 /* PostsViewController.swift */,
 				4E0E8E921CF78B42006F76C7 /* Main.storyboard */,

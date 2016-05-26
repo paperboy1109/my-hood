@@ -17,5 +17,10 @@ class PostCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    func configureCell(post: Post) {
+        titleLbl.text = post.title
+        descLbl.text = post.postDesc
+    }
 
 }
