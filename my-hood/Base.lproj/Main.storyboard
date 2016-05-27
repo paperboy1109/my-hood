@@ -179,6 +179,9 @@
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelBtnTapped:" destination="S8z-Xf-X0z" eventType="touchUpInside" id="sKA-ur-bQU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.52941176469999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,7 +191,7 @@
                                     <constraint firstItem="70y-2Q-heU" firstAttribute="centerX" secondItem="Ilc-ve-4G4" secondAttribute="centerX" id="nA3-d6-wlH"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrel-water-bridge" translatesAutoresizingMaskIntoConstraints="NO" id="7AH-TG-GuU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7AH-TG-GuU">
                                 <rect key="frame" x="180" y="119" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="QWu-aR-CzP"/>
@@ -201,6 +204,9 @@
                                 <state key="normal" title="+ Add Pic">
                                     <color key="titleColor" red="0.98039215686274506" green="0.65490196078431373" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="adPicBtnTapped:" destination="S8z-Xf-X0z" eventType="touchUpInside" id="Z3L-fX-PA2"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vl7-ae-xbb">
                                 <rect key="frame" x="20" y="383" width="560" height="40"/>
@@ -236,6 +242,9 @@
                                         <exclude reference="hDi-5J-H4Q"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="makePostBtnTapped:" destination="S8z-Xf-X0z" eventType="touchUpInside" id="G6R-WL-C0F"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -261,6 +270,11 @@
                             <constraint firstItem="l2m-c7-AR8" firstAttribute="centerX" secondItem="7AH-TG-GuU" secondAttribute="centerX" id="u94-Vt-7FQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descField" destination="ocE-IG-3uV" id="hAO-Lb-xqt"/>
+                        <outlet property="postImg" destination="7AH-TG-GuU" id="bo2-86-blR"/>
+                        <outlet property="titleField" destination="vl7-ae-xbb" id="GO3-gk-dpg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFf-jH-HRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
