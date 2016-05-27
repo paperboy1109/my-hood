@@ -12,7 +12,8 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    var posts = [Post]()
+    // Posts now come from the singleton
+    // var posts = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         
+        /*
         let post = Post(imagePath: "", title: "Post 1", description: "post 1 description")
         let post2 = Post(imagePath: "", title: "Post 2", description: "this is a second test post")
         let post3 = Post(imagePath: "", title: "Post 3", description: "highly relevant info goes here")
@@ -29,7 +31,10 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         posts.append(post3)
         
         tableView.reloadData()
+         */
         
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "onPostsLoaded:", name: "postsLoaded", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostsViewController.onPostsLoaded(_:)), name: "postsLoaded", object: nil)
         
     }
     
@@ -39,7 +44,7 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let post = posts[indexPath.row]
+        let post = DataService.instance.loadedPosts[indexPath.row] //posts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             cell.configureCell(post)
@@ -56,7 +61,11 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return DataService.instance.loadedPosts.count
+    }
+    
+    func onPostsLoaded(notif: AnyObject) {
+        tableView.reloadData()
     }
 
 
