@@ -21,6 +21,9 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         
+        DataService.instance.loadPosts()
+        
+        // TEST DATA
         /*
         let post = Post(imagePath: "", title: "Post 1", description: "post 1 description")
         let post2 = Post(imagePath: "", title: "Post 2", description: "this is a second test post")
